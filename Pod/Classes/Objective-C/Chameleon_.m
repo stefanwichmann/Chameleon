@@ -49,6 +49,7 @@
     [[self class] customizeTabBarWithBarTintColor:FlatWhite andTintColor:primaryColor];
     [[self class] customizeToolbarWithPrimaryColor:primaryColor withContentStyle:contentStyle];
     [[self class] customizeImagePickerControllerWithPrimaryColor:primaryColor withContentStyle:contentStyle];
+    [[self class] customizeImageWithPrimaryColor:primaryColor withContentStyle:contentStyle];
 }
 
 
@@ -257,7 +258,7 @@
     }
     
     [[UIButton appearance] setTintColor:contentColor];
-    [[UIButton appearance] setBackgroundColor:primaryColor];
+    [[UIButton appearance] setBackgroundColor:ClearColor];
     
     [[UIButton appearanceWhenContainedIn:[UISearchBar class], nil] setTintColor:contentColor];
     [[UIButton appearanceWhenContainedIn:[UISearchBar class], nil] setBackgroundColor:ClearColor];
@@ -274,6 +275,7 @@
     [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setTintColor:primaryColor];
     [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setBackgroundColor:ClearColor];
     
+    [[UIButton appearance] setTitleColor:primaryColor forState:UIControlStateNormal];
     [[UIButton appearance] setTitleShadowColor:ClearColor forState:UIControlStateNormal];
 }
 
@@ -306,8 +308,8 @@
         }
     }
     
-    [[UIButton appearance] setTintColor:secondaryContentColor];
-    [[UIButton appearance] setBackgroundColor:secondaryColor];
+    [[UIButton appearance] setTintColor:primaryColor];
+    [[UIButton appearance] setBackgroundColor:ClearColor];
     
     [[UIButton appearanceWhenContainedIn:[UISearchBar class], nil] setTintColor:contentColor];
     [[UIButton appearanceWhenContainedIn:[UISearchBar class], nil] setBackgroundColor:ClearColor];
@@ -324,7 +326,37 @@
     [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setTintColor:primaryColor];
     [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setBackgroundColor:ClearColor];
     
+    [[UIButton appearance] setTitleColor:primaryColor forState:UIControlStateNormal];
     [[UIButton appearance] setTitleShadowColor:ClearColor forState:UIControlStateNormal];
+}
+
+#pragma mark - UIImage
+
++ (void)customizeImageWithPrimaryColor:(UIColor *)primaryColor
+                       withContentStyle:(UIContentStyle)contentStyle {
+    
+    UIColor *contentColor;
+    switch (contentStyle) {
+        case UIContentStyleContrast: {
+            contentColor = ContrastColor(primaryColor, NO);
+            break;
+        }
+        case UIContentStyleLight: {
+            contentColor = [UIColor whiteColor];
+            break;
+        }
+        case UIContentStyleDark: {
+            contentColor = FlatBlackDark;
+            break;
+        }
+        default: {
+            contentColor = ContrastColor(primaryColor, NO);
+            break;
+        }
+    }
+    
+    [[UIImageView appearanceWhenContainedIn:[UIButton class], nil] setTintColor:primaryColor];
+    [[UIImageView appearanceWhenContainedIn:[UIButton class], nil] setBackgroundColor:ClearColor];
 }
 
 #pragma mark - UIImagePickerController

@@ -41,8 +41,9 @@ class FirstViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        initChameleonColors()
-        
+        //initChameleonColors()
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatPink, with: .dark)
+        //Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatPink, withSecondaryColor: UIColor.flatLime, andContentStyle: .light)
         // Hide nav bar hairline
         self.navigationController?.hidesNavigationBarHairline = true
     }

@@ -257,7 +257,7 @@
         }
     }
     
-    [[UIButton appearance] setTintColor:contentColor];
+    [[UIButton appearance] setTintColor:primaryColor];
     [[UIButton appearance] setBackgroundColor:ClearColor];
     
     [[UIButton appearanceWhenContainedIn:[UISearchBar class], nil] setTintColor:contentColor];
@@ -265,7 +265,7 @@
     
     [[UIButton appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:contentColor];
     [[UIButton appearanceWhenContainedIn:[UINavigationBar class], nil] setBackgroundColor:ClearColor];
-    
+
     [[UIButton appearanceWhenContainedIn:[UIToolbar class], nil] setTintColor:contentColor];
     [[UIButton appearanceWhenContainedIn:[UIToolbar class], nil] setBackgroundColor:ClearColor];
     
@@ -275,7 +275,6 @@
     [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setTintColor:primaryColor];
     [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setBackgroundColor:ClearColor];
     
-    [[UIButton appearance] setTitleColor:primaryColor forState:UIControlStateNormal];
     [[UIButton appearance] setTitleShadowColor:ClearColor forState:UIControlStateNormal];
 }
 

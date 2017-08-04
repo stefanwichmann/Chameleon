@@ -354,6 +354,9 @@
         }
     }
     
+    [[UIImageView appearance] setTintColor:primaryColor];
+    [[UIImageView appearance] setBackgroundColor:ClearColor];
+    
     [[UIImageView appearanceWhenContainedIn:[UIButton class], nil] setTintColor:primaryColor];
     [[UIImageView appearanceWhenContainedIn:[UIButton class], nil] setBackgroundColor:ClearColor];
 }

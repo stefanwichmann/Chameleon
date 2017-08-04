@@ -271,6 +271,9 @@
     [[UIButton appearanceWhenContainedIn:[UIStepper class], nil] setTintColor:primaryColor];
     [[UIButton appearanceWhenContainedIn:[UIStepper class], nil] setBackgroundColor:ClearColor];
     
+    [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setTintColor:primaryColor];
+    [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setBackgroundColor:ClearColor];
+    
     [[UIButton appearance] setTitleShadowColor:ClearColor forState:UIControlStateNormal];
 }
 
@@ -317,6 +320,9 @@
     
     [[UIButton appearanceWhenContainedIn:[UIStepper class], nil] setTintColor:primaryColor];
     [[UIButton appearanceWhenContainedIn:[UIStepper class], nil] setBackgroundColor:ClearColor];
+    
+    [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setTintColor:primaryColor];
+    [[UIButton appearanceWhenContainedIn:[UITableView class], nil] setBackgroundColor:ClearColor];
     
     [[UIButton appearance] setTitleShadowColor:ClearColor forState:UIControlStateNormal];
 }

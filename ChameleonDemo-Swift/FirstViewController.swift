@@ -42,7 +42,7 @@ class FirstViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //initChameleonColors()
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatPink, with: .dark)
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatPink, with: .contrast)
         //Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatPink, withSecondaryColor: UIColor.flatLime, andContentStyle: .light)
         // Hide nav bar hairline
         self.navigationController?.hidesNavigationBarHairline = true
@@ -60,7 +60,7 @@ class FirstViewController: UITableViewController {
         let randomFlatColorContract = ContrastColorOf(randomFlatColor, returnFlat: true)
         // Nav bar
         navigationController?.navigationBar.barTintColor = randomFlatColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: randomFlatColorContract]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: randomFlatColorContract]
         // Tab bar
         tabBarController?.tabBar.barTintColor = randomFlatColor
         tabBarController?.tabBar.tintColor = randomFlatColorContract
@@ -116,11 +116,10 @@ class FirstViewController: UITableViewController {
     
     // Generate a random color
     func generateRandomColor() -> UIColor {
-        let red = Float(arc4random_uniform(256))/255.0
-        let green = Float(arc4random_uniform(256))/255.0
-        let blue = Float(arc4random_uniform(256))/255.0
-        
-        return UIColor(colorLiteralRed: red, green: green, blue: blue, alpha: 1.0)
+        let red = CGFloat(arc4random_uniform(256))/255.0
+        let green = CGFloat(arc4random_uniform(256))/255.0
+        let blue = CGFloat(arc4random_uniform(256))/255.0
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
 }
 

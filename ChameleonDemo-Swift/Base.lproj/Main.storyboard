@@ -99,7 +99,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-wN-AHI">
                                                     <rect key="frame" x="165" y="14" width="84" height="30"/>
-                                                    <state key="normal" title="Button" image="first"/>
+                                                    <state key="normal" title="Button" image="first">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <segue destination="cjv-g7-sBl" kind="show" id="PbX-5c-OHq"/>
                                                     </connections>
